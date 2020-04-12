@@ -1,0 +1,17 @@
+{
+  "properity": {
+    "prefix": "properity",
+    "body": [
+      "public int Id { get; set; }",
+      "public string Name { get; set; }",
+      "public DateTime? Created_At { get; set; } = new DateTime();",
+      "public DateTime? Updated_At { get; set; } = new DateTime();"
+    ],
+    "description": "properity"
+  },
+  "dbset": {
+    "prefix": "dbset",
+    "body": ["public DbSet<${1:ModelName}> ${1:ModelName}s { get; set; }"],
+    "description": "dbset"
+  }
+}
