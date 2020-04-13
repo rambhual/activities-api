@@ -1,0 +1,8 @@
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/bin/Debug/netcoreapp3.0/activity-model.deps.json
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/bin/Debug/netcoreapp3.0/activity-model.dll
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/bin/Debug/netcoreapp3.0/activity-model.pdb
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/obj/Debug/netcoreapp3.0/activity-model.csprojAssemblyReference.cache
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/obj/Debug/netcoreapp3.0/activity-model.AssemblyInfoInputs.cache
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/obj/Debug/netcoreapp3.0/activity-model.AssemblyInfo.cs
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/obj/Debug/netcoreapp3.0/activity-model.dll
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-model/obj/Debug/netcoreapp3.0/activity-model.pdb

@@ -1,0 +1,11 @@
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/bin/Debug/netcoreapp3.0/activity-data.deps.json
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/bin/Debug/netcoreapp3.0/activity-data.dll
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/bin/Debug/netcoreapp3.0/activity-data.pdb
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/bin/Debug/netcoreapp3.0/activity-model.dll
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/bin/Debug/netcoreapp3.0/activity-model.pdb
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.csprojAssemblyReference.cache
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.AssemblyInfoInputs.cache
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.AssemblyInfo.cs
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.csproj.CopyComplete
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.dll
+/home/ramprit/applications/aspnetcore-app/backend-app/activity-data/obj/Debug/netcoreapp3.0/activity-data.pdb

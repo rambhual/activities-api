@@ -1,8 +1,14 @@
 using System.Threading.Tasks;
 using activity_data.Repository;
 using activity_model;
-using activity_model.Dtos;
+using activity_data.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace activity_api.Controllers
 {
@@ -10,22 +16,16 @@ namespace activity_api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IAuthRepository _repository;
+        private readonly IConfiguration _configuration;
 
-        public UserController(IAuthRepository repository)
+        public UserController(IAuthRepository repository, IConfiguration configuration)
         {
             _repository = repository;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            //TODO: Implement Realistic Implementation
-            await Task.Yield();
-            return Ok();
+            _configuration = configuration;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserDto user)
+        public async Task<IActionResult> Register(UserDto user)
         {
            var username = user.UserName.ToLower();
             if (await _repository.UserExist(username))
@@ -35,6 +35,31 @@ namespace activity_api.Controllers
             };
             var createUser = await _repository.Register(userToCreate,user.Password);
             return StatusCode(201);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginUser(UserDto userDto)
+        {
+            var user = await _repository.Login(userDto.UserName.ToLower(),userDto.Password);
+            if (user is null)
+              return Unauthorized();
+
+            var claims = new[]{
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.UserName)
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:token").Value));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+            var tokenDescriptor = new SecurityTokenDescriptor{
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(1),
+                SigningCredentials = creds
+            };
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return Ok(new {
+                token = tokenHandler.WriteToken(token)
+            });
         }
     }
 }
