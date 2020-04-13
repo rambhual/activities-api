@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using activity_data.Repository;
 
 namespace activity_api
 {
@@ -21,6 +22,7 @@ namespace activity_api
         {
             services.AddControllers();
             services.AddDbContext<ActivityDataContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("defaultConnection")));
+            services.AddScoped<IAuthRepository,AuthRepository>();
             services.AddCors();
         }
 

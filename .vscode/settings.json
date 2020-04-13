@@ -11,6 +11,11 @@
             "port": 5432,
             "server": "localhost",
             "username": "postgres"
+        },
+        {
+            "database": "${workspaceFolder}/activity-api/datingApp.db",
+            "dialect": "SQLite",
+            "name": "dating"
         }
     ]
 }
